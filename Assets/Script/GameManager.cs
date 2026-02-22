@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("UI Panels")]
     [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject SkillPanel;
     [SerializeField] private GameObject gameOverPanel;
 
     [Header("Game Over UI Elements")]
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         gameIsActive = false;
         if (mainMenuPanel != null) mainMenuPanel.SetActive(true);
+        if (SkillPanel != null) SkillPanel.SetActive(false);
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         Time.timeScale = 0f;
     }
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
     {
         gameIsActive = true;
         if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
+        if (SkillPanel != null) SkillPanel.SetActive(true);
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -86,6 +89,7 @@ public class GameManager : MonoBehaviour
     {
         gameIsActive = false;
         if (gameOverPanel != null) gameOverPanel.SetActive(true);
+        if (SkillPanel != null) SkillPanel.SetActive(false);
         if (winnerText != null) winnerText.text = message;
         Time.timeScale = 0f;
     }
